@@ -19,7 +19,7 @@
 - Passport Local (passport-local)
 - Sequelize
 - MySQL2 
-'''
+```
 npm install express express-session express-handlebars body-parser method-override passport passport-local sequelize mysql2 --save
-'''
+```
 
