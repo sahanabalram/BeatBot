@@ -1,0 +1,32 @@
+{
+  "name": "beatbot",
+  "version": "1.0.0",
+  "description": "- Check if logged in, if logged in take to user profile, if not logged in take them to /login (or keep on index, but display login/create an account box) - When a user is on their profile they should see their playlist names (songs in playlist, will be in a collapsed div that can expand) - Search box can change between song, album or artist - API's to add: Spotify, YouTube, SoundCloud, iTunes, LastFM, etc.. (choose 3?) - Setting up routes, gets, posts, handlebars (layouts w/ dynamic code) - Any public files can go in the public folder - Add a view for public vs private users (if user says public, than anyone can type in users name and see playlists, but not edit, etc..)",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "mysql2": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahanabalram/BeatBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahanabalram/BeatBot/issues"
+  },
+  "homepage": "https://github.com/sahanabalram/BeatBot#readme"
+}
