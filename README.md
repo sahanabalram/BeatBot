@@ -1,5 +1,6 @@
 # BeatBot
-##Things to work on:
+
+## Things to work on:
 - Check if logged in, if logged in take to user profile, if not logged in take them to /login (or keep on index, but display login/create an account box)
 - When a user is on their profile they should see their playlist names (songs in playlist, will be in a collapsed div that can expand)
 - Search box can change between song, album or artist
@@ -18,7 +19,7 @@
 - Passport Local (passport-local)
 - Sequelize
 - MySQL2 
-''
+'''
 npm install express express-session express-handlebars body-parser method-override passport passport-local sequelize mysql2 --save
-''
+'''
 
