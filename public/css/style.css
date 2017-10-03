@@ -4,7 +4,7 @@ a.navbar-brand {
     letter-spacing: 2px;
 }
 
-button.btn.btn-outline-info.dropdown-toggle,
+button.btn.btn-outline-success.dropdown-toggle,
 #find-music,
 #content,
 #welcome-user,#search-text {
@@ -28,4 +28,7 @@ i.fa.fa-sign-out {
 #slogan {
     font-size: 16px;
     font-family: 'Kanit', sans-serif;
+}
+body{
+    background-color: lightgray;
 }
