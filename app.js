@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var itunes = require('itunes-search');
-//var Spotify = require('node-spotify-api');
+var SpotifyWebApi = require('spotify-web-api-node');
 
 var app = express();
 var PORT = process.env.PORT || 8080;
@@ -31,26 +31,40 @@ app.post("/applemusic", function(req, res) {
 	})	
 });
 //-------------------------------------------
-//var spotify = new Spotify({
-//	  id: "26e7e461255f4d1ca61d06d85c55e56d",
-//	  secret: "8005e4cceb1a49958d902ff43df0295d"
-//	});
+var spotifyApi = new SpotifyWebApi({
+	  clientId : '26e7e461255f4d1ca61d06d85c55e56d',
+	  clientSecret : '8005e4cceb1a49958d902ff43df0295d',
+	  redirectUri : 'http://www.example.com/callback'
+	});
 
-//spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-//	  if (err) {
-//	    return console.log('Error occurred: ' + err);
-//	  }
-//	 console.log(data)
-//	
-//	});
+spotifyApi.clientCredentialsGrant()
+.then(function(data) {
+  console.log('The access token expires in ' + data.body['expires_in']);
+  console.log('The access token is ' + data.body['access_token']);
+
+  // Save the access token so that it's used in future calls
+  spotifyApi.setAccessToken(data.body['access_token']);
+}, function(err) {
+  console.log('Something went wrong when retrieving an access token', err.message);
+});
+
+
+
 app.get("/spotify", function(req, res) {
     res.json("200");
   });
 
 app.post("/spotify", function(req, res) {
-
+	spotifyApi.searchTracks('track:Counting Stars')
+	.then(function(data) {
+	  console.log('Search tracks by "Alright" in the track name and "Kendrick Lamar" in the artist name', data.body);
+	  res.json(data)
+	}, function(err) {
+	  console.log('Something went wrong!', err);
+	});
+	
 });
-
+//-------------------------------------------
 
 
 
