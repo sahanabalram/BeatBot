@@ -2,6 +2,11 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+var expression = require("express-session");
+var passport = require("passport");
+var passlocal = require("passport-local");
+var sequel = require("sequelize");
+var mysql2 = require("mysql2");
 
 // Set app to the express function
 var app = express();
@@ -10,11 +15,21 @@ var PORT = process.env.PORT || 8080;
 // Sets up database models for "syncin"
 var db = require("./models");
 
+function testing() {
+    
+    console.log("In testing!");
+}
+
 // Makes req.user a global value of res.locals.user
 app.use(function(req, res, next) {
-    if(!req.user) console.log("Not logged in!");
     res.locals.user = req.user;
-    next();
+    if(!req.user){
+        console.log("Not logged in!");
+        res.locals.user = "NotLoggedIn";
+        next();
+    }else {
+        console.log("Am I here?");
+    }
 });
 
 // Override with POST having ?_method=DELETE

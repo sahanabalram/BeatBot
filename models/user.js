@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
     // Initializes "User" in the Table: Users with a username and password column (id, created, updated) will be made by sequelize
-    var User = sequelize.define("Users", {
+    var User = sequelize.define("User", {
         username: {
             // Sets username to STRING
             type: DataTypes.STRING,
@@ -24,10 +24,15 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     User.associate = function(models) {
-        User.hasMany(models.Post, {
-            onDelete: "cascade"
+        // Associating User with Posts
+        // When an User is deleted, also delete any associated Posts
+        User.hasMany(models.Playlist, {
+          onDelete: "cascade"
         });
-    };
+        User.hasMany(models.Search, {
+            onDelete: "cascade"
+          });
+      };
 
     return User;
 };

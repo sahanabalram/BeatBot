@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
     // Initializes "User" in the Table: Users with a username and password column (id, created, updated) will be made by sequelize
-    var Playlist = sequelize.define("Playlists", {
+    var Playlist = sequelize.define("Playlist", {
         playlistName: {
             // Sets playlistName to STRING
             type: DataTypes.STRING,
@@ -94,12 +94,12 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Playlist.associate = function(models) {
-        Post.belongsTo(models.User, {
+        Playlist.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
 
-    return User;
+    return Playlist;
 };
