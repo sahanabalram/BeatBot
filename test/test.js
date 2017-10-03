@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-var hash = require('./../config/passport/bcrypt');
+
 
 describe('Array', function() {
   describe('#indexOf()', function() {

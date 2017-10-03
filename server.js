@@ -16,7 +16,7 @@ var session = require("express-session");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -37,12 +37,12 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./routes/userauth.js")(app,passport);
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 var db = require("./models");
-require("./config/passport/userAuthentication.js")(passport,db.User);
+
 
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
