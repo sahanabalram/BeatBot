@@ -37,12 +37,7 @@ module.exports = function(sequelize, DataTypes) {
         raw_row: {
             type: DataTypes.DECIMAL(10,2)
         },
-        createdAt:{
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            type: DataTypes.DATE
-        }
+        
     });
     return Song;
 }
