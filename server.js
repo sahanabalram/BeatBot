@@ -7,9 +7,8 @@
 var express = require("express");
 var expressHandleBars = require("express-handlebars");
 var bodyParser = require("body-parser");
-var passport = require("passport");
 var methodOverride = require("method-override");
-var session = require("express-session");
+
 
 
 
@@ -26,10 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-// Sets up the passport sessions, intialize 
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 
 // Static directory
