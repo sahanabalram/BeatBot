@@ -1,0 +1,54 @@
+p#main-heading {
+    font-family: 'Kanit', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+button#user-button {
+    margin-top: 10px;
+}
+
+button.btn.btn-outline-success.dropdown-toggle,
+#find-music,
+#content,
+#welcome-user,
+#search-text,
+#checkbox,
+#top10 {
+    margin-top: 50px;
+}
+
+i.fa.fa-user-circle,
+i.fa.fa-history,
+i.fa.fa-cog,
+i.fa.fa-apple,
+i.fa.fa-spotify,
+i.fa.fa-sign-out,
+#checkbox {
+    margin-left: 5px;
+}
+
+.footer {
+    clear: both;
+    margin-top: 450px;
+}
+
+p#slogan {
+    font-size: 16px;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.nav-item {
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}
+.row.content {
+    margin-top: 60px;
+}
+
+
