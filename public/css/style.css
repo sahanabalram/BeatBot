@@ -3,11 +3,16 @@ a.navbar-brand {
     font-size: 36px;
     letter-spacing: 2px;
 }
-
+#top10 {
+    float: left;
+}
+button.btn.btn-secondary.dropdown-toggle.dropdown-toggle-split {
+    background-color: green;
+}
 button.btn.btn-outline-success.dropdown-toggle,
 #find-music,
 #content,
-#welcome-user,#search-text,#top10 {
+#welcome-user,#search-text {
     margin-top: 50px;
 }
 
