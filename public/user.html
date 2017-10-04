@@ -14,17 +14,37 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="row">
-            <div class="col-sm-3">
-                <a class="navbar-brand" href="#"><img src="images/BeatBot-Logo.png" height="100"></a>
-            </div>
-            <div class="col-sm-8">
-                <p>BeatBot</p>
-                <p id="slogan">The best way to find your music</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+        <a class="navbar-brand" href="#"><img src="images/BeatBot-Logo.png" height="50px" alt="beatbot"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+            aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#about">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#beatBot-news">Beat Bot News<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="contact" data-toggle="modal" data-target="#display-contact">Contact Us<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    id="user-button">Welcome User<i class="fa fa-user-circle"></i></button>
+                <div class="dropdown-menu text-center">
+                    <p><a class="dropdown-item" href="#">History<i class="fa fa-history"></i></a></p>
+                    <p><a class="dropdown-item" href="#">Settings<i class="fa fa-cog"></i></a></p>
+                    <p><a class="dropdown-item" href="#">Logout<i class="fa fa-sign-out"></i></a></p>
+                </div>
             </div>
         </div>
-        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#display-top10" id="top10" onclick="topTen()">Top 10 songs</button>
     </nav>
     <div class="container-fluid text-center">
         <div class="row content">
@@ -47,16 +67,11 @@
                         <div class="input-group" id="search-text">
                             <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
                             <span class="input-group-btn">
-                                                 <button class="btn btn-outline-success" type="button">Search</button>
-                                                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Song</a>
-                                <a class="dropdown-item" href="#">Artist</a>
-                            </div>
+                                 <button class="btn btn-outline-success" type="button">Search</button>
                         </div>
-
+                        <div class="container" id="display-info">
+                            <h1>Test</h1>
+                        </div>
                     </div>
 
                 </div>
@@ -64,51 +79,89 @@
             </div>
 
             <div class="col-sm-2 sidenav">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome User<i class="fa fa-user-circle"></i></button>
-                    <div class="dropdown-menu text-center">
-                        <p><a class="dropdown-item" href="#">History<i class="fa fa-history"></i></a></p>
-                        <p><a class="dropdown-item" href="#">Settings<i class="fa fa-cog"></i></a></p>
-                        <p><a class="dropdown-item" href="#">Logout<i class="fa fa-sign-out"></i></a></p>
+                 <div class="col-sm-2" id="top10">
+                     <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#display-top10"  onclick="topTen()">Top 10 songs</button>
+                    
+                </div>
+        
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for BeatBot News -->
+    <div class="modal fade" id="beatBot-news" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">BeatBot News</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-outline-success">Save changes</button>
+                        </div>
                     </div>
                 </div>
-                <p>Display content here</p>
             </div>
-        </div>
-    </div>
 
-    <!-- Modal for top 10 songs -->
-    <div class="modal fade" id="display-top10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLongTitle">Top 10 Songs of All Times</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <!-- Modal for About -->
+            <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">About The Team</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-outline-success">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for top 10 songs -->
+            <div class="modal fade" id="display-top10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalLongTitle">Top 10 Songs of All Time</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
-                                  </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr class="table-success">
-                                <th>#</th>
-                                <th>Artist</th>
-                                <th>Title</th>
-                                <th>Year</th>
-                            </tr>
-                        </thead>
-                        <tbody id="display-top10songs">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr class="table-success">
+                                        <th>#</th>
+                                        <th>Artist</th>
+                                        <th>Title</th>
+                                        <th>Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="display-top10songs">
 
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Modal for contact us link -->
     <div class="modal fade" id="display-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -138,14 +191,6 @@
             </div>
         </div>
     </div>
-    <footer class="footer text-center">
-        <div class="container">
-            <p></p><a href="#">Home|</a>
-            <a href="#">About|</a>
-            <a href="#">BeatBot News|</a>
-            <a href="#" id="contact" data-toggle="modal" data-target="#display-contact">Contact Us</a>
-        </div>
-    </footer>
 
     <!-- Bootstrap jQuery -->
 
