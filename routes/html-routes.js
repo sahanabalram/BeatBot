@@ -14,7 +14,9 @@ module.exports = function(app) {
 
   // index route loads user.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/user.html"));
+    console.log("Value: ",res.locals.user);
+    // res.sendFile(path.join(__dirname, "../public/user.html"));
+    res.render("index", {userInfo: req.params.user});
   });
 
 };
