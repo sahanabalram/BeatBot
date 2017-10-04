@@ -1,4 +1,4 @@
-# BeatBot
+# ![alt text](https://raw.githubusercontent.com/sahanabalram/BeatBot/master/public/images/BeatBot-Logo.PNG "BeatBot Logo") BeatBot
 
 ## Things to work on:
 - Check if logged in, if logged in take to user profile, if not logged in take them to /login (or keep on index, but display login/create an account box)
