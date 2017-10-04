@@ -100,7 +100,11 @@ app.post("/search", function(req, res) {
 	});
 	
 //Google-------------------------------------------------------	
-	pm.init({email: "boyuanl1@icloud.com", password: "Bryan19940113"}, function(err) {
+	pm.login({email: "babyjnova12", password: "pagebrin", androidId: ""}, function(err) {
+	    if(err) console.error(err);
+	    
+	})
+	pm.init({email: "babyjnova12", password: "pagebrin"}, function(err) {
 	    if(err) console.error(err);
 
 	    pm.search(JSON.parse(req.body).song, 10, function(err, data) { 
