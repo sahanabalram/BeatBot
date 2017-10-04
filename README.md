@@ -1,7 +1,8 @@
 <p align="center">
-  <img width="100" src="https://raw.githubusercontent.com/sahanabalram/BeatBot/master/public/images/BeatBot-Logo.PNG" alt="BeatBot - Logo"><br/>
-    <h1>BeatBot</h1>
+  <img width="100" src="https://raw.githubusercontent.com/sahanabalram/BeatBot/master/public/images/BeatBot-Logo.PNG" alt="BeatBot - Logo">
 </p>
+
+# BeatBot
 
 ## Things to work on:
 - Check if logged in, if logged in take to user profile, if not logged in take them to /login (or keep on index, but display login/create an account box)
