@@ -1,6 +1,6 @@
 <p align="center" text-align="center">
   <img width="100" src="https://raw.githubusercontent.com/sahanabalram/BeatBot/master/public/images/BeatBot-Logo.PNG" alt="BeatBot - Logo"><br>
-  <span style="font-size: 50px !important;font-weight: bold;">BeatBot</span>
+  # BeatBot
 </p>
 
 ## Things to work on:
