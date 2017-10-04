@@ -1,0 +1,39 @@
+a.navbar-brand {
+    font-family: 'Kanit', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+#top10 {
+    float: left;
+}
+button.btn.btn-secondary.dropdown-toggle.dropdown-toggle-split {
+    background-color: green;
+}
+button.btn.btn-outline-success.dropdown-toggle,
+#find-music,
+#content,
+#welcome-user,#search-text {
+    margin-top: 50px;
+}
+
+i.fa.fa-user-circle,
+i.fa.fa-history,
+i.fa.fa-cog,
+i.fa.fa-apple,
+i.fa.fa-spotify,
+i.fa.fa-sign-out {
+    margin-left: 5px;
+}
+
+.footer {
+    clear: both;
+    margin-top: 450px;
+}
+
+#slogan {
+    font-size: 16px;
+    font-family: 'Kanit', sans-serif;
+}
+body{
+    background-color: lightgray;
+}
