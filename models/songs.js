@@ -4,13 +4,14 @@ module.exports = function(sequelize, DataTypes) {
     // raw_eur and raw_row
     // A return is used to return the song after defining it
 
-    var Song = sequelize.define("song", {
+    var Song = sequelize.define("Song", {
         artist: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
+            notEmpty: true
+            /* validate: {
                 len:[1,200]
-            }
+            } */
         },
         title : {
             type: DataTypes.STRING,
@@ -21,22 +22,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         year: {
             type: DataTypes.INTEGER
-        },
-        raw_total: {
-            type: DataTypes.DECIMAL(10,2)
-        },
-        raw_usa: {
-            type: DataTypes.DECIMAL(10,2)
-        },
-        raw_uk: {
-            type: DataTypes.DECIMAL(10,2)
-        },
-        raw_eur: {
-            type: DataTypes.DECIMAL(10,2)
-        },
-        raw_row: {
-            type: DataTypes.DECIMAL(10,2)
-        },
+        }
         
     });
     return Song;
