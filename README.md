@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" text-align="center">
   <img width="100" src="https://raw.githubusercontent.com/sahanabalram/BeatBot/master/public/images/BeatBot-Logo.PNG" alt="BeatBot - Logo"><br/>
     <h1>BeatBot</h1>
 </p>
