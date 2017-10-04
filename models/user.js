@@ -9,21 +9,23 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1, 32]
+                notEmpty: true
             }
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isEmail: true
+                notEmpty: true
             }
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false
-        },
-
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        }
     });
 
     return User;
