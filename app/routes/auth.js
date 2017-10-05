@@ -1,4 +1,21 @@
 var authController = require("../controllers/authcontroller.js");
+
+/**
+ * Music Stuff
+ */
+var itunes = require('itunes-search');
+var SpotifyWebApi = require('spotify-web-api-node');
+var PlayMusic = require('playmusic');
+
+var result = {apple: [],spotify: [],google: [],mv: ""};
+var options = { media: "music", entity: "", limit: 10}
+var spotifyApi = new SpotifyWebApi({
+  clientId : '26e7e461255f4d1ca61d06d85c55e56d',
+  clientSecret : '8005e4cceb1a49958d902ff43df0295d',
+  redirectUri : 'http://www.example.com/callback'
+});
+var pm = new PlayMusic();
+
 module.exports = function(app, passport) {
     // Waits for a get request on /signup
     app.get("/", authController.index);
@@ -36,9 +53,10 @@ module.exports = function(app, passport) {
     /**
      * Music Stuff
      */
-    app.post("api/search", function(req, res) {
+    app.post("/api/search", function(req, res) {
+        console.log("In the post!", req.body);
         //Apple Music-------------------------------------------------------
-            itunes.search(JSON.parse(req.body).song, options, function(data) {
+            itunes.search(req.body.song, options, function(data) {
                 result.apple = [];
                 for (var i = 0; i < data.results.length; i++) {
                     var item = {
@@ -95,7 +113,7 @@ module.exports = function(app, passport) {
             pm.init({email: "babyjnova12", password: "pagebrin"}, function(err) {
                 if(err) console.error(err);
         
-                pm.search(JSON.parse(req.body).song, 10, function(err, data) { 
+                pm.search(req.body.song, 10, function(err, data) { 
                         result.google = [];
                     for (var i = 0; i < data.entries.length; i++) {
                         if (data.entries[i].type == 8) {
@@ -127,6 +145,7 @@ module.exports = function(app, passport) {
         
             });
         //------------------------------------------------------------	
+            console.log(result);
             res.json(result);
             
         });
