@@ -20,7 +20,7 @@ app.use(session({secret: "somevaluablesecrets", resave: true, saveUninitialized:
 app.use(passport.initialize());
 app.use(passport.session());
 
-var db = require("./models");
+var db = require("./app/models");
 app.use(express.static("public"));
 
 db.sequelize.sync().then(function() {
@@ -81,9 +81,9 @@ app.use(function(req, res, next) {
 
 
 // Routes
-require("./routes/song.js")(app);
-require("./routes/html-routes.js")(app);
-require("./routes/users.js")(app);
+require("./app/routes/song.js")(app);
+require("./app/routes/html-routes.js")(app);
+require("./app/routes/users.js")(app);
 require("./app/routes/auth.js")(app, passport);
 require("./app/config/passport/passport.js")(passport, db.user);
 
