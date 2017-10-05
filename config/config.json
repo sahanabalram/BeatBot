@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "pappy123",
-    "database": "beatBot_db",
+    "database": "beatbot_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

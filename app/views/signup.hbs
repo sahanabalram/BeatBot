@@ -1,0 +1,98 @@
+
+
+<body>
+
+	<div class="modal-body">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Insert Beat Bot logo and name -->
+				<div class="col-sm-4">
+					<img src="images/BeatBot-Logo.PNG" alt="Beat Bot Logo" style="width:128px;height:128px;">
+				</div>
+				<div class="col-sm-8">
+					<h1 class=beatbot>Beat Bot</h1>
+					<h6 class=beatbot_sub>The best way to find your music.</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="card effect__click">
+					<div class="card__front">
+						<br>
+						<h5 class="form-title">Login Here</h5>
+						<br>
+						<form action="/signin" method="post">
+							<div class="row">
+								<div class="col-md-11">
+									<div class="form-group">
+										<input type="text" class="form-control" required="" name="username" placeholder="Username" value="">
+										<span class="help-block">*Required</span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-11">
+									<div class="form-group">
+										<input type="text" class="form-control" required="" name="password" placeholder="Password" value="">
+										<span class="help-block">*Required</span>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-outline-success">Submit</button>
+							<br>
+							<hr>
+							<h5>New to Beat Bot? Sign up here!</h5>
+							<br>
+							<button type="button" id="toggle" class="btn btn-outline-success">Create Account</button>
+						</form>
+					</div>
+
+					<div class="card__back">
+						<br>
+						<h5 class="form-title">Create Account</h5>
+						<br>
+						<form action="" method="post">
+							<div class="row">
+								<div class="col-md-11">
+									<div class="form-group">
+										<input type="text" class="form-control" required="" name="username" placeholder="Username" value="">
+										<span class="help-block">*Required</span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-11">
+									<div class="form-group">
+										<input type="text" class="form-control" required="" name="email" placeholder="Email Address" value="">
+										<span class="help-block">*Required</span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-11">
+									<div class="form-group">
+										<input type="text" class="form-control" required="" name="password" placeholder="Password" value="">
+										<span class="help-block">*Required</span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<button type="submit" class="btn btn-outline-success">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<!-- Custom Script -->
+	<script src="js/view.js" type="text/javascript"></script>
+
+</body>
