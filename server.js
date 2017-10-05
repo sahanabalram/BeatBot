@@ -14,6 +14,22 @@ app.use(session({secret: "somevaluablesecrets", resave: true, saveUninitialized:
 app.use(passport.initialize());
 app.use(passport.session());
 
+/**
+ * Music Stuff
+ */
+var itunes = require('itunes-search');
+var SpotifyWebApi = require('spotify-web-api-node');
+var PlayMusic = require('playmusic');
+
+var result = {apple: [],spotify: [],google: [],mv: ""};
+var options = { media: "music", entity: "", limit: 10}
+var spotifyApi = new SpotifyWebApi({
+  clientId : '26e7e461255f4d1ca61d06d85c55e56d',
+  clientSecret : '8005e4cceb1a49958d902ff43df0295d',
+  redirectUri : 'http://www.example.com/callback'
+});
+var pm = new PlayMusic();
+
 // Connect-Flash
 var flash = require('connect-flash');
 
