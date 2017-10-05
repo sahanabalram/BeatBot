@@ -1,5 +1,11 @@
 var express = require("express");
 var app = express();
+var expressHandleBars = require("express-handlebars");
+var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
+var passport = require("passport");
+var session = require("session");
+
 
 var passport = require("passport");
 var session = require("express-session");
@@ -39,10 +45,47 @@ app.use(function(req, res, next) {
     }
 });
 
+// Static directory
+app.use(express.static("public"));
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({
+  defaultLayout: "main"
+}));
+
+app.use(session({secret: "somevaluablesecrets", resave: true, saveUninitialized: true}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.set('views', __dirname + '/app/views');
+
+var exphbs = require('express-handlebars');
+app.engine('.hbs', exphbs({
+        defaultLayout: 'main', 
+        extname: '.hbs',
+        layoutsDir:'app/views/layouts',
+        partialsDir:'app/views/partials'
+}));
+app.set('view engine', '.hbs');
+
+console.log(app.get("views"));
+
+app.use(function(req, res, next) {
+    res.locals.user = req.user;
+    if(!req.user){
+        next();
+    }else {
+        next();
+    }
+});
+
+
+
 // Routes
 require("./routes/song.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/users.js")(app);
+require("./app/routes/auth.js")(app, passport);
+require("./app/config/passport/passport.js")(passport, db.user);
 
 // app.get("/", function(req,res) {
 //     res.send("Welcome to Passport with Sequelize!");
