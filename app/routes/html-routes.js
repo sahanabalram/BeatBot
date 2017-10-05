@@ -16,7 +16,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     console.log("Value: ",res.locals.user);
     // res.sendFile(path.join(__dirname, "../public/user.html"));
-    res.render("index", {userInfo: req.params.user});
+    res.render("signup", {userInfo: req.params.user});
   });
 
 };
