@@ -14,6 +14,11 @@ app.use(session({secret: "somevaluablesecrets", resave: true, saveUninitialized:
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Connect-Flash
+var flash = require('connect-flash');
+
+app.use(flash());
+
 // Static Directory
 app.use(express.static("public"));
 

@@ -34,7 +34,7 @@
 						<br>
 						<form action="/signin" method="post">
 							<div class="row">
-								<div class="col-md-11">
+								<div class="col-md-11">{{#if loginError}}Error: {{loginError}}{{/if}}
 									<div class="form-group">
 										<input type="text" class="form-control" required="" name="username" placeholder="Username" value="">
 										<span class="help-block">*Required</span>
@@ -65,7 +65,7 @@
 						<br>
 						<form action="/signup" method="post">
 							<div class="row">
-								<div class="col-md-11">
+								<div class="col-md-11">{{#if error}}Error: {{error}}{{/if}}
 									<div class="form-group">
 										<input type="text" class="form-control" required="" name="username" placeholder="Username" value="">
 										<span class="help-block">*Required</span>

@@ -7,7 +7,7 @@ module.exports = function(app, passport) {
     // Looks for a post request on /signup then runs through passport
     app.post("/signup", passport.authenticate("local-signup", {
         successRedirect: "/user",
-        failureRedirect: "/signup2"
+        failureRedirect: "/signup"
     }));
 
     // Waits for a get request for /user

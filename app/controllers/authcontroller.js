@@ -2,7 +2,9 @@ var db = require("../models");
 var exports = module.exports = {}
 
 exports.signup = function(req, res) {
-   res.render("signup");
+    var themessage = req.flash("signupMess")[0];
+    console.log(themessage);
+    res.render("signup", {error: themessage});
 }
 
 exports.index = function(req, res) {
