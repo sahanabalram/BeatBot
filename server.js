@@ -4,7 +4,7 @@ var app = express();
 var passport = require("passport");
 var session = require("express-session");
 var bodyParser = require("body-parser");
-
+var PORT = process.env.PORT || 3002;
 var exphbs = require("express-handlebars");
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -55,6 +55,6 @@ app.use(function(req, res, next) {
 require("./app/routes/auth.js")(app, passport);
 require("./app/config/passport/passport.js")(passport, db.user);
 
-app.listen(3005, function(err) {
-    if(err) throw err;
+app.listen(PORT, function () {
+	console.log("App listening on PORT " + PORT);
 });
