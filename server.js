@@ -45,8 +45,6 @@ app.use(function(req, res, next) {
     }
 });
 
-// Static directory
-app.use(express.static("public"));
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({
   defaultLayout: "main"
