@@ -37,7 +37,7 @@ module.exports = function(passport, user) {
                 }
             }).then(function(user) {
                 if(user) {
-                    return done(null,false, {message: "That username is already taken"});
+                    return done(null,false, req.flash("signupMess", "Username is already taken!"));
                 } else {
                     var userPassword = generateHash(password);
                     var data = {

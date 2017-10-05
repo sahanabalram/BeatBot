@@ -1,20 +1,16 @@
 module.exports = function(sequelize,DataTypes) {
     var Search = sequelize.define("Search",{
-        artist: {
-            type: DataTypes.STRING
-           /*  allowNull: false,
-            notEmpty: true */
-        },
-        title: {
-            type: DataTypes.STRING
-        },
-        song: {
-            type: DataTypes.STRING
+        query: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
         }
     });
 
     Search.associate = function(models) {
-        Search.belongsTo(models.User, {
+        Search.belongsTo(models.user, {
             foriegnKey: {
                 allowNull: false
             }
