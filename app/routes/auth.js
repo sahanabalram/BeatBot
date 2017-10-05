@@ -1,13 +1,13 @@
-var authController = require("../controllers/authcontrollers.js");
+var authController = require("../controllers/authcontroller.js");
 module.exports = function(app, passport) {
     // Waits for a get request on /signup
-    app.get("/", authController.signup);
+    app.get("/", authController.index);
     app.get("/signup", authController.signup);
 
     // Looks for a post request on /signup then runs through passport
     app.post("/signup", passport.authenticate("local-signup", {
         successRedirect: "/user",
-        failureRedirect: "/signup"
+        failureRedirect: "/signup2"
     }));
 
     // Waits for a get request for /user

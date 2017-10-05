@@ -5,6 +5,10 @@ exports.signup = function(req, res) {
    res.render("signup");
 }
 
+exports.index = function(req, res) {
+    res.redirect("/signup");
+}
+
 exports.user = function(req, res) {
     // CAN PASS MORE THAN ONE OBJECT THROUGH RENDER
     res.render("user", {reqs: req.user, val: res.locals.user});

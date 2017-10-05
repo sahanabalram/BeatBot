@@ -22,7 +22,8 @@ module.exports = function(passport, user) {
         {
             usernameField: "username",
             passwordField: "password",
-            passReqToCallback: true
+            passReqToCallback: true,
+            flash: true
         },
         function(req, username, password, done) {
             console.log("username: ",username);
@@ -61,7 +62,8 @@ module.exports = function(passport, user) {
         {
             usernameField: "username",
             passwordField: "password",
-            passReqToCallback: true
+            passReqToCallback: true,
+            flash: true
         },
         function(req, username, password, done) {
             var User = user;

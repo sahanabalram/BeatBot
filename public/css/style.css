@@ -50,5 +50,16 @@ body {
 .row.content {
     margin-top: 60px;
 }
-
-
+#message-text {
+    height: 95px;
+}
+#searchInput {
+    width: 100%;
+    line-height: 2.4;
+    border: 0;
+    padding: 0 0 0 15px;
+}
+.form-control {
+    padding: 0 !important;
+    background-color: lightgray !important;
+}
