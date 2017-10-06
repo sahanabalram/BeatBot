@@ -71,7 +71,8 @@ function search() {
             for (var i = 0; i < data.length; i++) {
                 div = $("<div/>");
                 div.addClass("card"); 
-                div.css("width", "20rem");// style="width: 20rem;">)
+                // div.css("width", "20rem");// style="width: 20rem;">)
+                div.css("display","inline-block");
                 html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
                 <div class="card-body"> \
                   <h4 class="card-title">' + data[i].song + '</h4> \

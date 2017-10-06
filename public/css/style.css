@@ -75,3 +75,11 @@ body {
     margin: 5px;
     margin-top: 20px;
 }
+
+div#display-songs {
+    margin-top: 40px;
+}
+div#itunes,div#spotify {
+    border: 2px solid;
+    margin-left: 10px;
+}
