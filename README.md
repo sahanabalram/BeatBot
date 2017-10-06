@@ -45,12 +45,12 @@ The user can log out when clicked on the Logout button and will be navigated to 
 
 
 ## Screenshot of the app
-![screenshot of the App](assets/images/app.png)
+![screenshot of the App](public/images/app.png)
 
 ## Authors
 
 Sahana Balram : https://github.com/sahanabalram
 Kevin Lussier : https://github.com/kluss
 Bryan Liu : https://github.com/boyuanl1
-Richard Selnick : https://github.com/richardselz 
+Richard Selnick : https://github.com/richardselz  
 
