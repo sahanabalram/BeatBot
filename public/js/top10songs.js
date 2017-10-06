@@ -68,7 +68,7 @@ function search() {
         success: function (data, textStatus, jqXHR) {
             console.log(data);
             $("#itunes").empty();
-            for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < 5; i++) {
                 div = $("<div/>");
                 html = ' \
                 <figure class="snip1506"> \
