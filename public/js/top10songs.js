@@ -8,9 +8,9 @@ function topTen() {
             for (var i = 0; i < data.length; i++) {
                 tr = $("<tr/>");
                 tr.append("<td>" + data[i].id + "</td>");
-                tr.append("<td>" + data[i].artist + "</td>");
-                tr.append("<td>" + data[i].title + "</td>");
-                tr.append("<td>" + data[i].year + "</td>");
+                tr.append("<td>" + data[i].topTenArtist + "</td>");
+                tr.append("<td>" + data[i].topTenTitle + "</td>");
+                tr.append("<td>" + data[i].topTenYear + "</td>");
                 $("#display-top10songs").first().append(tr);
             }
         }
