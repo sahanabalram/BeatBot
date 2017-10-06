@@ -75,7 +75,7 @@ function search() {
                     <div class="profile-image"><img src="' + data[i].img + '" alt="Card image cap"/> \
                     </div> \
                       <figcaption> \
-                        <h3>' + data[i].song + '</h3> \
+                        <h3><a href=' + data[i].url +'>'  + data[i].song + '</a></h3> \
                         <h4>' + data[i].artist + '</h4> \
                         <p>' + data[i].album + '</p> \
                      </figcaption> \
@@ -102,7 +102,7 @@ function search() {
                     <div class="profile-image"><img src="' + data[i].img + '" alt="Card image cap"/> \
                     </div> \
                       <figcaption> \
-                        <h3>' + data[i].song + '</h3> \
+                        <h3><a href=' + data[i].url +'>'  + data[i].song + '</a></h3> \
                         <h4>' + data[i].artist + '</h4> \
                         <p>' + data[i].album + '</p> \
                      </figcaption> \
