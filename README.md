@@ -50,7 +50,10 @@ The user can log out when clicked on the Logout button and will be navigated to 
 ## Authors
 
 Sahana Balram : https://github.com/sahanabalram
+<br>
 Kevin Lussier : https://github.com/kluss
+<br>
 Bryan Liu : https://github.com/boyuanl1
+<br>
 Richard Selnick : https://github.com/richardselz  
 
