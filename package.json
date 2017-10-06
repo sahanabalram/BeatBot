@@ -15,8 +15,8 @@
     "connect-flash": "^0.1.1",
     "express": "^4.16.1",
     "express-handlebars": "^3.0.0",
-    "itunes-search": "^1.0.1",
     "express-session": "^1.15.6",
+    "itunes-search": "^1.0.1",
     "method-override": "^2.3.10",
     "mocha": "^4.0.0",
     "moment": "^2.18.1",
@@ -24,9 +24,10 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
+    "playmusic": "^2.3.0",
     "sequelize": "^4.13.5",
-    "spotify-web-api-node": "^2.5.0",
     "session": "^0.1.0",
-    "should": "^13.1.0"
+    "should": "^13.1.0",
+    "spotify-web-api-node": "^2.5.0"
   }
 }

@@ -22,14 +22,6 @@ app.use(flash());
 // Static Directory
 app.use(express.static("public"));
 
-var db = require("./app/models");
-
-db.sequelize.sync().then(function() {
-    console.log("Sequelize Connected!");
-}).catch(function(err) {
-    console.error("Something went wrong: ",err);
-});
-
 app.set('views', __dirname + '/app/views');
 
 var exphbs = require('express-handlebars');
@@ -41,7 +33,15 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-console.log(app.get("views"));
+var db = require("./app/models");
+db.sequelize.sync().then(function() {
+    console.log("Sequelize Connected!");
+}).catch(function(err) {
+    console.error("Something went wrong: ",err);
+});
+
+
+// console.log(app.get("views"));
 
 app.use(function(req, res, next) {
     res.locals.user = req.user;
@@ -52,6 +52,7 @@ app.use(function(req, res, next) {
     }
 });
 
+require("./app/routes/app.js")(app);
 require("./app/routes/auth.js")(app, passport);
 require("./app/config/passport/passport.js")(passport, db.user);
 

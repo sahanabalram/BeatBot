@@ -28,9 +28,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#beatBot-news">Beat Bot News<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#" id="contact" data-toggle="modal" data-target="#display-contact">Contact Us<span class="sr-only">(current)</span></a>
-                </li>
             </ul>
             <div class="btn-group">
                 <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -44,15 +41,10 @@
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View History By</button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Song</a>
-                        <a class="dropdown-item" href="#">Artist</a>
-                        <a class="dropdown-item" href="#">Album</a>
-                    </div>
+                <div class="col-sm-2" id="top10">
+                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#display-top10" onclick="topTen()">Top 10 songs</button>
+
                 </div>
-                <p id="content"> Display content according to the search history selected by the user here</p>
             </div>
             <div class="col-sm-8 text-center">
                 <h1 class="text-center" id="find-music">Find Music</h1>
@@ -60,43 +52,50 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6">
                         <div class="input-group" id="search-text">
-                            <form method="post" action="/search" class="form-control">
+                            <!--form method="post" action="/search" class="form-control"></form-->
                             <input type="text" id="searchInput" name="search" placeholder="Search for..." aria-label="Search for...">
                             <span class="input-group-btn">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </div>
-                        <div class="container" id="display-info">
-                            <h1>{{#if searched}}{{searched.search}}{{/if}}</h1>
+                            <button class="btn btn-outline-success" type="submit" onclick="search()">Search</button>               
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
-            <div class="col-sm-2 sidenav">
-                 <div class="col-sm-2" id="top10">
-                     <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#display-top10"  onclick="topTen()">Top 10 songs</button>
-                    
+            <div class="container" id="display-info">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4" id="itunes-list">
+                        M
+                    </div>
+                    <div class="col-sm-12 col-md-4" id="spotify-list">
+                        N
+                    </div>
+                    <div class="col-sm-12 col-md-4" id="gpc-list">
+                        P
+                    </div>
                 </div>
+            </div>
+            <div class="col-sm-2 sidenav">
+                 
         
             </div>
         </div>
     </div>
-
-    <!-- Modal for BeatBot News -->
-    <div class="modal fade" id="beatBot-news" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">BeatBot News</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+{{!-- Modal for beatbot news --}}
+ <div class="modal fade" id="beatBot-news" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">BeatBot News</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            Hello {{#if val}}{{val.username}}{{/if}}, <br/><br/>Welcome to BeatBot News! <br/>We hope you enjoy your stay!<br/><br/>Sincerely,<br/>Beep Boop Beat Bot
+                            Hello {{#if val}}{{val.username}}{{/if}}, <br/>
+                            <br/>Welcome to BeatBot News!
+                            <br/>We hope you enjoy your stay!
+                            <br/>
+                            <br/>Sincerely,
+                            <br/>Beep Boop Beat Bot
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
@@ -104,117 +103,88 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Modal for About -->
-            <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">About The Team</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+            
+        <!-- Modal for About -->
+        <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">About The Team</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
-                        <div class="modal-body">
-                             <table class="table">
-                                <thead>
-                                    <tr class="table-success">
-                                        <th>Name</th>
-                                        <th>Git</th>
-                                        <th>LinkedIn</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="about-us">
-                                    <tr>
-                                        <td>Sahana</td>
-                                        <td><a href="https://github.com/sahanabalram" target="_blank">Link</a></td>
-                                        <td><a href="https://www.linkedin.com/in/sahana-balram-a58b52123/" target="_blank">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kevin</td>
-                                        <td><a href="https://github.com/kluss" target="_blank">Link</a></td>
-                                        <td><a href="https://www.linkedin.com/in/kevin-lussier-a3263378/" target="_blank">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bryan</td>
-                                        <td><a href="https://github.com/boyuanl1" target="_blank">Link</a></td>
-                                        <td><a href="https://www.linkedin.com/in/boyuanliu/" target="_blank">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Richard</td>
-                                        <td><a href="https://github.com/richardselz" target="_blank">Link</a></td>
-                                        <td><a href="https://www.linkedin.com/in/selznick/" target="_blank">Link</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Modal for top 10 songs -->
-            <div class="modal fade" id="display-top10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-center" id="exampleModalLongTitle">Top 10 Songs of All Time</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr class="table-success">
-                                        <th>#</th>
-                                        <th>Artist</th>
-                                        <th>Title</th>
-                                        <th>Year</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="display-top10songs">
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-                        </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr class="table-success">
+                                    <th>Name</th>
+                                    <th>Git</th>
+                                    <th>LinkedIn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="about-us">
+                                <tr>
+                                    <td>Sahana</td>
+                                    <td><a href="https://github.com/sahanabalram" target="_blank">Link</a></td>
+                                    <td><a href="https://www.linkedin.com/in/sahana-balram-a58b52123/" target="_blank">Link</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Kevin</td>
+                                    <td><a href="https://github.com/kluss" target="_blank">Link</a></td>
+                                    <td><a href="https://www.linkedin.com/in/kevin-lussier-a3263378/" target="_blank">Link</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Bryan</td>
+                                    <td><a href="https://github.com/boyuanl1" target="_blank">Link</a></td>
+                                    <td><a href="https://www.linkedin.com/in/boyuanliu/" target="_blank">Link</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Richard</td>
+                                    <td><a href="https://github.com/richardselz" target="_blank">Link</a></td>
+                                    <td><a href="https://www.linkedin.com/in/selznick/" target="_blank">Link</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Modal for contact us link -->
-    <div class="modal fade" id="display-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <!-- Modal for top 10 songs -->
+        <div class="modal fade" id="display-top10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLongTitle">Top 10 Songs of All Time</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
-                                  </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="form-control-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="form-control-label">Message:</label>
-                            <textarea class="form-control" id="message-text" placeholder="Hello BeatBots,&#10Your website is amazing! &#10Thanks, &#10{{val.username}}"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-outline-success">Send message</button>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr class="table-success">
+                                    <th>#</th>
+                                    <th>Artist</th>
+                                    <th>Title</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody id="display-top10songs">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- Bootstrap jQuery -->
