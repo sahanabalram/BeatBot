@@ -19,6 +19,19 @@ function topTen() {
 
 function search() {
     var song = $("#searchInput").val();
+    $("#searchInput").val("");
+    $.ajax({
+        type: "POST",
+        url: "/search",
+        data: {value: song},
+        success: function(data, textStatus, jqXHR) {
+            console.log(data);
+            console.log("The post worked?");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log("Error while posting search: ",textStatus);
+        }
+    });
     $.ajax({
         type: "GET",
         url: "api/search/itunes/" + song,

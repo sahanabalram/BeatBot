@@ -22,8 +22,9 @@ exports.user = function(req, res) {
  * including Query and userId
  */
 exports.searchPost = function(req,res) {
+    console.log("query: ",req.body.value," userId:",res.locals.user.id);
     db.Search.create({
-        query: req.body.search,
+        query: req.body.value,
         userId: res.locals.user.id
     }).then(function(result) {
         console.log("success");
