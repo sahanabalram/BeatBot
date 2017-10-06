@@ -70,15 +70,17 @@ function search() {
             $("#itunes").empty();
             for (var i = 0; i < data.length; i++) {
                 div = $("<div/>");
-                div.addClass("card"); 
-                // div.css("width", "20rem");// style="width: 20rem;">)
-                div.css("display","inline-block");
-                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
-                <div class="card-body"> \
-                  <h4 class="card-title">' + data[i].song + '</h4> \
-                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
-                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
-                </div>'
+                html = ' \
+                <figure class="snip1506"> \
+                    <div class="profile-image"><img src="' + data[i].img + '" alt="Card image cap"/> \
+                    </div> \
+                      <figcaption> \
+                        <h3>' + data[i].song + '</h3> \
+                        <h4>' + data[i].artist + '</h4> \
+                        <p>' + data[i].album + '</p> \
+                     </figcaption> \
+                </figure> \
+                ';
                 div.append(html);
                 $("#itunes").append(div);
             }
@@ -95,14 +97,17 @@ function search() {
             $("#spotify").empty();
             for (var i = 0; i < data.length; i++) {
                 div = $("<div/>");
-                div.addClass("card"); 
-                div.css("width", "20rem");// style="width: 20rem;">)
-                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
-                <div class="card-body"> \
-                  <h4 class="card-title">' + data[i].song + '</h4> \
-                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
-                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
-                </div>'
+                html = ' \
+                <figure class="snip1506"> \
+                    <div class="profile-image"><img src="' + data[i].img + '" alt="Card image cap"/> \
+                    </div> \
+                      <figcaption> \
+                        <h3>' + data[i].song + '</h3> \
+                        <h4>' + data[i].artist + '</h4> \
+                        <p>' + data[i].album + '</p> \
+                     </figcaption> \
+                </figure> \
+                ';
                 div.append(html);
                 $("#spotify").append(div);
             }
