@@ -46,6 +46,7 @@ The user can log out when clicked on the Logout button and will be navigated to 
 
 ## Screenshot of the app
 ![screenshot of the App](public/images/app.png)
+![screenshot of the App](public/images/beatbot1.png)
 
 ## Authors
 
