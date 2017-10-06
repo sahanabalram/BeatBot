@@ -17,7 +17,6 @@ function topTen() {
     });
 }
 
-
 function search() {
     var song = $("#searchInput").val();
     $.ajax({
@@ -25,16 +24,19 @@ function search() {
         url: "api/search/itunes/" + song,
         success: function (data, textStatus, jqXHR) {
             console.log(data);
-            var tr;
-            $("#display-itunes").empty();
+            $("#itunes").empty();
             for (var i = 0; i < data.length; i++) {
-                tr = $("<tr/>");
-                tr.append("<td>" + data[i].song + "</td>");
-                tr.append("<td>" + data[i].artist + "</td>");
-                tr.append("<td>" + data[i].img+ "</td>");
-                tr.append("<td>" + data[i].preview + "</td>");
-                tr.append("<td>" + data[i].url + "</td>");
-                $("#display-itunes").first().append(tr);
+                div = $("<div/>");
+                div.addClass("card"); 
+                div.css("width", "20rem");// style="width: 20rem;">)
+                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
+                <div class="card-body"> \
+                  <h4 class="card-title">' + data[i].song + '</h4> \
+                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
+                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
+                </div>'
+                div.append(html);
+                $("#itunes").append(div);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -46,14 +48,19 @@ function search() {
         url: "api/search/spotify/" + song,
         success: function (data, textStatus, jqXHR) {
             console.log(data);
-            $("#display-spotify").empty();
+            $("#spotify").empty();
             for (var i = 0; i < data.length; i++) {
-                tr = $("<tr/>");
-                tr.append("<td>" + data[i].song + "</td>");
-                tr.append("<td>" + data[i].artist + "</td>");
-                tr.append("<td>" + data[i].img+ "</td>");
-                tr.append("<td>" + data[i].url + "</td>");
-                $("#display-spotify").first().append(tr);
+                div = $("<div/>");
+                div.addClass("card"); 
+                div.css("width", "20rem");// style="width: 20rem;">)
+                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
+                <div class="card-body"> \
+                  <h4 class="card-title">' + data[i].song + '</h4> \
+                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
+                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
+                </div>'
+                div.append(html);
+                $("#spotify").append(div);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -65,21 +72,27 @@ function search() {
         url: "api/search/gp/" + song,
         success: function (data, textStatus, jqXHR) {
             console.log(data);
-            $("#display-gp").empty();
+            $("#gp").empty();
             for (var i = 0; i < data.length; i++) {
-                tr = $("<tr/>");
-                tr.append("<td>" + data[i].song + "</td>");
-                tr.append("<td>" + data[i].img+ "</td>");
-                tr.append("<td>" + data[i].url + "</td>");
-                $("#display-gp").first().append(tr);
+                div = $("<div/>");
+                div.addClass("card"); 
+                div.css("width", "20rem");// style="width: 20rem;">)
+                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
+                <div class="card-body"> \
+                  <h4 class="card-title">' + data[i].song + '</h4> \
+                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
+                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
+                </div>'
+                div.append(html);
+                $("#gp").append(div);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("Error while requesting google play music:", textStatus);
         }
     });
-
 }
+
 $(document).ready(function () {
     topTen();
 });
