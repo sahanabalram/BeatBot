@@ -21,9 +21,9 @@ The intent of this site concept is to offer a user the experience in finding the
 12. bcrypt : https://www.npmjs.com/package/bcrypt
 13. Spotify : https://www.npmjs.com/package/spotify-web-api-node
 ## Deployed Site
-https://beatbot-ucsd.herokuapp.com/signup
+https://beatbot-ucsd.herokuapp.com/
 ## Walkthrough
-Navigate to BeatBot(https://beatbot-ucsd.herokuapp.com/signup). On the front page , the user will see the login page. If there already an existing user they can sign in using there username and password. If they are a new user they can click on the Create Account button and they can register for BeatBot.
+Navigate to BeatBot(https://beatbot-ucsd.herokuapp.com/). On the front page , the user will see the login page. If there already an existing user they can sign in using there username and password. If they are a new user they can click on the Create Account button and they can register for BeatBot.
 
 When creating an account, the user is to sign up using there username, email and password. After this process is complete, they are directed to the user profile page. 
 
