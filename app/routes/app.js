@@ -79,41 +79,44 @@ module.exports = function (app) {
             password: gpc.password,
             androidId: ""
         }, function (err) {
-            if (err) throw err;
-        });
-        pm.init({
-            email: gpc.username,
-            password: gpc.password
-        }, function (err) {
             if (err) {
-                console.error(err);
+                throw err;
             } else {
-                pm.search(req.params.song, 5, function (err, data) {
-                    results = [];
-                    if(!req.params.song) res.json(results);
-                    for (var i = 0; i < data.entries.length; i++) {
-                        if (data.entries[i].type == 8) {
-                            results.mv = "https://www.youtube.com/watch?v=" + data.entries[i].youtube_video.id;
-                            break;
-                        }
-                    }
-                    for (var i = 0; i < data.entries.length; i++) {
-                        if (data.entries[i].type == 6) {
-                            if (data.entries[i].station.seed.trackId == undefined) {
-                                continue;
+                pm.init({
+                    email: gpc.username,
+                    password: gpc.password
+                }, function (err) {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                        pm.search(req.params.song, 5, function (err, data) {
+                            results = [];
+                            if(!req.params.song) res.json(results);
+                            for (var i = 0; i < data.entries.length; i++) {
+                                if (data.entries[i].type == 8) {
+                                    results.mv = "https://www.youtube.com/watch?v=" + data.entries[i].youtube_video.id;
+                                    break;
+                                }
                             }
-                            var item = {
-                                song: data.entries[i].station.name,
-                                artist: null,
-                                album: null,
-                                img: data.entries[i].station.imageUrls[0].url,
-                                url: "https://play.google.com/music/listen?authuser&u=0#/wst/sm/" + data.entries[i].station.seed.trackId,
-                                preview: null
+                            for (var i = 0; i < data.entries.length; i++) {
+                                if (data.entries[i].type == 6) {
+                                    if (data.entries[i].station.seed.trackId == undefined) {
+                                        continue;
+                                    }
+                                    var item = {
+                                        song: data.entries[i].station.name,
+                                        artist: null,
+                                        album: null,
+                                        img: data.entries[i].station.imageUrls[0].url,
+                                        url: "https://play.google.com/music/listen?authuser&u=0#/wst/sm/" + data.entries[i].station.seed.trackId,
+                                        preview: null
+                                    }
+                                    results.push(item)
+                                }
                             }
-                            results.push(item)
-                        }
+                            res.json(results);
+                        });
                     }
-                    res.json(results);
                 });
             }
         });

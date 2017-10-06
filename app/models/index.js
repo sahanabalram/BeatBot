@@ -8,6 +8,7 @@ var config = require(path.join(__dirname, '..', '..', 'config', 'config.json'))[
 var db = {};
 
 if(process.env.JAWSDB_URL) {
+    console.log("In production");
     var sequelize = new Sequelize(process.env.JAWSDB_URL);
     console.log("In the JAWSDB environment!");
 } else {
