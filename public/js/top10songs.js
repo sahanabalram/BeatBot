@@ -67,30 +67,6 @@ function search() {
             console.log("Error while requesting spotify:", textStatus);
         }
     });
-    $.ajax({
-        type: "GET",
-        url: "api/search/gp/" + song,
-        success: function (data, textStatus, jqXHR) {
-            console.log(data);
-            $("#gp").empty();
-            for (var i = 0; i < data.length; i++) {
-                div = $("<div/>");
-                div.addClass("card"); 
-                div.css("width", "20rem");// style="width: 20rem;">)
-                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
-                <div class="card-body"> \
-                  <h4 class="card-title">' + data[i].song + '</h4> \
-                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
-                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
-                </div>'
-                div.append(html);
-                $("#gp").append(div);
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log("Error while requesting google play music:", textStatus);
-        }
-    });
 }
 
 $(document).ready(function () {
