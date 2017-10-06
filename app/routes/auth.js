@@ -21,6 +21,9 @@ module.exports = function(app, passport) {
     app.get("/", authController.index);
     app.get("/signup", authController.signup);
 
+    app.get("/history", authController.history);
+    app.get("/clearhistory", authController.clearhistory);
+
     // Looks for a post request on /signup then runs through passport
     app.post("/signup", passport.authenticate("local-signup", {
         successRedirect: "/user",

@@ -44,8 +44,7 @@
         <div class="row content">
             <div class="col-sm-2 col-md-2 sidenav">
                 <div class="col-sm-2" id="top10">
-                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#display-top10" onclick="topTen()">Top 10 songs</button>
-
+                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#display-top10" onclick="topTen()">Top 10 Songs</button>
                 </div>
             </div>
             <div class="col-sm-8 col-md-8 text-center">
@@ -62,7 +61,9 @@
                 </div>
             </div>
             <div class="col-sm-2 col-md-2 sidenav">
-                 
+                 <div class="col-sm-2" id="top10">
+                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#display-top10history" onclick="history()">Top 10 Searches</button>
+                </div>
             </div>
         </div>
         <div class="row" id="display-songs">
@@ -181,6 +182,27 @@
                             </table>
                         </div>
                         <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for top 10 searches -->
+            <div class="modal fade" id="display-top10history" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalLongTitle">Last 10 Search History</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <span id="display-top10searches"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="clearHistory()">Clear History</button>
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
                         </div>
                     </div>

@@ -16,13 +16,34 @@ exports.user = function(req, res) {
     res.render("user", {reqs: req.user, val: res.locals.user});
 }
 
+exports.history = function(req, res) {
+    db.Search.findAll({
+        limit: 10,
+        where: {
+            userId: res.locals.user.id
+        },
+        order: [['createdAt', 'DESC']]
+    }).then(function(data) {
+        res.json(data);
+    });
+}
+
+exports.clearhistory = function(req, res) {
+    db.Search.destroy({
+        where: {
+            userId: res.locals.user.id
+        }
+    }).then(function(data) {
+        console.log("UserID ",res.locals.user.id," Search History Cleared!");
+    });
+}
+
 /**
  * searchPost is called from auth.js after a post has been sent to /search
  * it then creates a new record for Searches in the beatbot_db database
  * including Query and userId
  */
 exports.searchPost = function(req,res) {
-    console.log("query: ",req.body.value," userId:",res.locals.user.id);
     db.Search.create({
         query: req.body.value,
         userId: res.locals.user.id

@@ -17,6 +17,36 @@ function topTen() {
     });
 }
 
+function history() {
+    $.ajax({
+        type: "GET",
+        url: "/history",
+        success: function (data, textStatus, jqXHR) {
+            console.log("Data: ",data);
+            var searches;
+            $("#display-top10searches").empty();
+            if(data.length === 0) $("#display-top10searches").first().append("Error: User has no history!");
+            for (var i = 0; i < data.length; i++) {
+                searches = data[i].query+"<br/>";
+                $("#display-top10searches").first().append(searches);
+            }
+        }
+    });
+}
+
+function clearHistory() {
+    $.ajax({
+        type: "GET",
+        url: "/clearhistory",
+        success: function (data, textStatus, jqXHR) {
+            console.log("Search History Cleared!");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log("Error in clearing history: ",textStatus);
+        }
+    })
+}
+
 function search() {
     var song = $("#searchInput").val();
     $("#searchInput").val("");
@@ -84,4 +114,5 @@ function search() {
 
 $(document).ready(function () {
     topTen();
+    history();
 });
