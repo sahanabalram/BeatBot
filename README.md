@@ -57,5 +57,5 @@ Kevin Lussier : https://github.com/kluss
 <br>
 Bryan Liu : https://github.com/boyuanl1
 <br>
-Richard Selnick : https://github.com/richardselz  
+Richard Selznick : https://github.com/richardselz  
 
