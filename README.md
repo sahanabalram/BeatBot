@@ -43,8 +43,6 @@ In the main area on the right side the Top 10 Searched can be viewed by clicking
 
 The user can log out when clicked on the Logout button and will be navigated to the signup page.
 
-Slide: https://docs.google.com/presentation/d/1pp62HpwET9ZSSoBKJTAJejEeaPegUjW4eWYV72o_fDE/edit?usp=sharing
-
 ## Screenshot of the app
 ![screenshot of the App](public/images/app.png)
 ![screenshot of the App](public/images/beatbot1.png)
