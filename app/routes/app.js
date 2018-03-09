@@ -65,6 +65,7 @@ module.exports = function (app) {
                 console.log('Something went wrong when retrieving an access token', err.message);
             });
     });
+<<<<<<< HEAD
 
     app.get("/api/search/gp/:song", function (req, res) {
         var gpc = {
@@ -118,4 +119,6 @@ module.exports = function (app) {
             }
         });
     });
+=======
+>>>>>>> aedde9143b961c01b7267101267fbd5cc5894297
 }

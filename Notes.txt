@@ -1,4 +1,0 @@
-- If we would like to add links to the top10songs for automatic searching, it is possible
-    <a href=\"/search/"+data[i].artist+"\" target=\"_blank\">" or something similar would go in the top10songs.js
-    and then just need to finalize the routing.
-

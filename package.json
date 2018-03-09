@@ -12,6 +12,8 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
     "connect-flash": "^0.1.1",
     "express": "^4.16.1",
     "express-handlebars": "^3.0.0",
@@ -25,6 +27,10 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "playmusic": "^2.3.0",
+<<<<<<< HEAD
+=======
+    "request": "^2.83.0",
+>>>>>>> aedde9143b961c01b7267101267fbd5cc5894297
     "sequelize": "^4.13.5",
     "session": "^0.1.0",
     "should": "^13.1.0",

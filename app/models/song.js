@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     // A return is used to return the song after defining it
 
     var Song = sequelize.define("Song", {
-        artist: {
+        topTenArtist: {
             type: DataTypes.STRING,
             allowNull: false,
             notEmpty: true
@@ -13,14 +13,14 @@ module.exports = function(sequelize, DataTypes) {
                 len:[1,200]
             } */
         },
-        title : {
+        topTenTitle : {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len:[1,200]
             }
         },
-        year: {
+        topTenYear: {
             type: DataTypes.INTEGER
         }
         
