@@ -21,28 +21,6 @@ function search() {
     var song = $("#searchInput").val();
     $.ajax({
         type: "GET",
-<<<<<<< HEAD
-        url: "api/search/itunes/" + song,
-        success: function (data, textStatus, jqXHR) {
-            console.log(data);
-            $("#itunes").empty();
-            for (var i = 0; i < data.length; i++) {
-                div = $("<div/>");
-                div.addClass("card"); 
-                div.css("width", "20rem");// style="width: 20rem;">)
-                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
-                <div class="card-body"> \
-                  <h4 class="card-title">' + data[i].song + '</h4> \
-                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
-                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
-                </div>'
-                div.append(html);
-                $("#itunes").append(div);
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log("Error while requesting itunes:", textStatus);
-=======
         url: "/history",
         success: function (data, textStatus, jqXHR) {
             console.log("Data: ",data);
@@ -83,33 +61,10 @@ function search() {
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log("Error while posting search: ",textStatus);
->>>>>>> aedde9143b961c01b7267101267fbd5cc5894297
         }
     });
     $.ajax({
         type: "GET",
-<<<<<<< HEAD
-        url: "api/search/spotify/" + song,
-        success: function (data, textStatus, jqXHR) {
-            console.log(data);
-            $("#spotify").empty();
-            for (var i = 0; i < data.length; i++) {
-                div = $("<div/>");
-                div.addClass("card"); 
-                div.css("width", "20rem");// style="width: 20rem;">)
-                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
-                <div class="card-body"> \
-                  <h4 class="card-title">' + data[i].song + '</h4> \
-                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
-                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
-                </div>'
-                div.append(html);
-                $("#spotify").append(div);
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log("Error while requesting spotify:", textStatus);
-=======
         url: "api/search/itunes/" + song,
         success: function (data, textStatus, jqXHR) {
             console.log(data);
@@ -133,33 +88,10 @@ function search() {
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("Error while requesting itunes:", textStatus);
->>>>>>> aedde9143b961c01b7267101267fbd5cc5894297
         }
     });
     $.ajax({
         type: "GET",
-<<<<<<< HEAD
-        url: "api/search/gp/" + song,
-        success: function (data, textStatus, jqXHR) {
-            console.log(data);
-            $("#gp").empty();
-            for (var i = 0; i < data.length; i++) {
-                div = $("<div/>");
-                div.addClass("card"); 
-                div.css("width", "20rem");// style="width: 20rem;">)
-                html = '<img class="card-img-top" src=' + data[i].img + ' alt="Card image cap"> \
-                <div class="card-body"> \
-                  <h4 class="card-title">' + data[i].song + '</h4> \
-                  <p class="card-text">Artist: ' + data[i].artist +  '<br> Album: ' + data[i].album + '</p> \
-                  <a href=' + data[i].url + 'class="btn btn-primary">Link</a> \
-                </div>'
-                div.append(html);
-                $("#gp").append(div);
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log("Error while requesting google play music:", textStatus);
-=======
         url: "api/search/spotify/" + song,
         success: function (data, textStatus, jqXHR) {
             console.log(data);
@@ -183,7 +115,6 @@ function search() {
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("Error while requesting spotify:", textStatus);
->>>>>>> aedde9143b961c01b7267101267fbd5cc5894297
         }
     });
 }
